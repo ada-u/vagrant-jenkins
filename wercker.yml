@@ -1,0 +1,20 @@
+---
+box : yutaadachi/ubuntu14.04-ansible1.6@1.0.3
+build :
+  steps :
+    - script:
+        name : run playbook
+        code : ansible-playbook provisioning/site.yml --connection=local
+        cwd  : ${WERCKER_ROOT}
+    - script:
+        name : install serverspec
+        code : |
+                sudo apt-get -y install ruby
+                sudo gem install bundler --no-ri --no-rdoc
+                sudo gem install rake    --no-ri --no-rdoc
+                bundle install
+        cwd  : ${WERCKER_ROOT}
+    - script:
+        name : run rake spec
+        code : rake spec
+        cwd  : ${WERCKER_ROOT}

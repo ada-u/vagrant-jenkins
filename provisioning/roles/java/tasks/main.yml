@@ -1,0 +1,4 @@
+---
+- name: Install Open JDK
+  apt: name=openjdk-7-jre-headless state=present
+  tags: java

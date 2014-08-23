@@ -1,0 +1,9 @@
+- hosts: jenkins.local
+
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - { role: common }
+    - { role: java }
+    - { role: jenkins }

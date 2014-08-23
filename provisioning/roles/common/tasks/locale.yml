@@ -1,0 +1,6 @@
+---
+  - name: Set locale as ja_JP
+    apt: name=language-pack-ja-base
+    tags:
+      - common
+      - locale

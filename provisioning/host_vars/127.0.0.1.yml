@@ -1,0 +1,5 @@
+---
+# file: host_vars/localhost
+
+user: vagrant
+site_name: api

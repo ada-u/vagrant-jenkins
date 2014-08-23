@@ -1,0 +1,20 @@
+---
+- name: Configure apt key for jenkins repository
+  apt_key:
+    url=http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key
+    state=present
+  tags: jenkins
+
+- name: Add jenkins APT repository
+  apt_repository:
+    repo='deb http://pkg.jenkins-ci.org/debian binary/'
+    state=present
+  tags: jenkins
+
+- name: Install jenkins
+  apt:
+    pkg=jenkins
+    update_cache=yes
+    force=yes
+    state=latest
+  tags: jenkins

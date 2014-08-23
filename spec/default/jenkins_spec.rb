@@ -4,7 +4,7 @@ describe package('jenkins') do
   it { should be_installed }
 end
 
-describe service('nginx') do
+describe service('jenkins') do
   it { should be_running   }
 end
 

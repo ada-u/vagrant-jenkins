@@ -1,0 +1,7 @@
+.VERSION
+.vagrant
+.DS_Store
+.idea
+logs
+src
+src/**/
